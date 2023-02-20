@@ -3,6 +3,17 @@
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 <meta name="generator" content="Hexo {{ hexo_version }}">
 
+<script>
+  (function(){
+      if('{{ page.password }}'){
+          if (prompt('请输入文章密码') !== '{{ page.password }}'){
+              alert('密码错误！');
+              history.back();
+          }
+      }
+  })();
+</script>
+
 {%- if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}">
 {%- endif %}
